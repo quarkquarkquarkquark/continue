@@ -20,6 +20,7 @@ export const PROVIDER_TOOL_SUPPORT: Record<
       "gpt-4",
       "o3",
       "gemini",
+      "ep-",
     ].some((part) => model.toLowerCase().startsWith(part));
   },
   anthropic: (model) => {
@@ -35,7 +36,8 @@ export const PROVIDER_TOOL_SUPPORT: Record<
     // https://platform.openai.com/docs/guides/function-calling#models-supporting-function-calling
     if (
       model.toLowerCase().startsWith("gpt-4") ||
-      model.toLowerCase().startsWith("o3")
+      model.toLowerCase().startsWith("o3") ||
+      model.toLowerCase().startsWith("ep-")
     ) {
       return true;
     }
